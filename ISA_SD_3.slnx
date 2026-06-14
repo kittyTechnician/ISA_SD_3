@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ISA_SD_3/ISA_SD_3.vcxproj" Id="b914003b-f199-48c1-977a-25f554c9ace6" />
+</Solution>
