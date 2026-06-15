@@ -49,6 +49,42 @@ static void testMenu(int method) {
 				cout << "Niepoprawny test\n";
 				break;
 			}
+			break; // Added break to prevent falling through to case 2
+
+		case 2: // Testy dla Open Hash Table
+			switch (testChoice) {
+			case 1:
+				Test::testOpenInsert();
+				break;
+			case 2:
+				Test::testOpenRemove();
+				break;
+			case 3:
+				Test::testOpenInsert();
+				Test::testOpenRemove();
+				break;
+			default:
+				cout << "Niepoprawny test\n";
+				break;
+			}
+			break; // Added break to prevent falling through to case 3
+
+		case 3: // Testy dla Chaining Hash Table
+			switch (testChoice) {
+			case 1:
+				Test::testChainingInsert();
+				break;
+			case 2:
+				Test::testChainingRemove();
+				break;
+			case 3:
+				Test::testChainingInsert();
+				Test::testChainingRemove();
+				break;
+			default:
+				cout << "Niepoprawny test\n";
+				break;
+			}
 			break;
 		}
 	}
@@ -58,13 +94,14 @@ static void testMenu(int method) {
 void menu() {
 	while (true) {
 		cout << "\n--- Wybierz strukture danych do badania ---\n";
-		cout << "1. AVL";
-		cout << "2. Kopiec\n";
+		cout << "1. AVL\n";
+		cout << "2. Open Hash Table\n";
+		cout << "3. Chaining Hash Table\n";
 		cout << "0. Wyjscie\n";
 
 		int methodChoice = menuChoice();
 		if (methodChoice == 0) break;
-		if (methodChoice >= 1 && methodChoice <= 2) {
+		if (methodChoice >= 1 && methodChoice <= 3) {
 			testMenu(methodChoice);
 		}
 		else {

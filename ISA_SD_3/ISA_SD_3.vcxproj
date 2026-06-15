@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClCompile Include="AVL.cpp" />
     <ClCompile Include="avlHash.cpp" />
+    <ClCompile Include="HashTableChaining.cpp" />
+    <ClCompile Include="HashTableOpen.cpp" />
     <ClCompile Include="ISA_SD_3.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Tests.cpp" />
@@ -136,6 +138,8 @@
   <ItemGroup>
     <ClInclude Include="AVL.h" />
     <ClInclude Include="avlHash.h" />
+    <ClInclude Include="HashTableChaining.h" />
+    <ClInclude Include="HashTableOpen.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Tests.h" />
   </ItemGroup>

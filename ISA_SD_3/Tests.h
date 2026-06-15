@@ -11,15 +11,15 @@ public:
     static const int COPIES;       // operacji na jedno powtórzenie
     static const vector<int> SIZES;        // badane rozmiary struktur
 
-    // ── HashTableChaining ────────────────────────────────
+    //HashTableChaining
     static void testChainingInsert();
     static void testChainingRemove();
 
-    // ── HashTableAVL ─────────────────────────────────────
+    //HashTableAVL
     static void testAVLInsert();
     static void testAVLRemove();
 
-    // ── HashTableCuckoo ──────────────────────────────────
-    static void testCuckooInsert();
-    static void testCuckooRemove();
+    //HashTableCuckoo
+    static void testOpenInsert();
+    static void testOpenRemove();
 };

@@ -1,7 +1,7 @@
 #include "Tests.h"
-//#include "hash_table_chaining.h"
+#include "HashTableChaining.h"
 #include "avlHash.h"
-//#include "hash_table_cuckoo.h"
+#include "HashTableOpen.h"
 
 #include <iostream>
 #include <fstream>
@@ -133,5 +133,41 @@ void Test::testAVLRemove() {
         "AVL_remove", "AVL_remove.csv",
         [](HashTableAVL& ht, int key, int val) {
             if (ht.contains(key)) ht.remove(key);
+        }, true);
+}
+
+//testy HashTableChaining
+
+void Test::testChainingInsert() {
+    runTest<HashTableChaining>(
+        "Chaining_insert", "Chaining_insert.csv",
+        [](HashTableChaining& ht, int key, int val) {
+            ht.insert(key, val);
+        });
+}
+
+void Test::testChainingRemove() {
+    runTest<HashTableChaining>(
+        "Chaining_remove", "Chaining_remove.csv",
+        [](HashTableChaining& ht, int key, int val) {
+            if (ht.search(key, val)) ht.remove(key);
+        }, true);
+}
+
+//testy HashTableOpen
+
+void Test::testOpenInsert() {
+    runTest<HashTableOpen>(
+        "Open_insert", "Open_insert.csv",
+        [](HashTableOpen& ht, int key, int val) {
+            ht.insert(key, val);
+        });
+}
+
+void Test::testOpenRemove() {
+    runTest<HashTableOpen>(
+        "Open_remove", "Open_remove.csv",
+        [](HashTableOpen& ht, int key, int val) {
+            if (ht.search(key, val)) ht.remove(key);
         }, true);
 }
